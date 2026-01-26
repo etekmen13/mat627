@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Rust (intall from [http://rustup.rs](http://rustup.rs))
+- Rust (install from [http://rustup.rs](http://rustup.rs))
 - `uv` (install with: `curl -LsSF https://astral.sh/uv/install.sh | sh`)
 
 
