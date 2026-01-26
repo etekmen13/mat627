@@ -1,0 +1,10 @@
+[package]
+name = "mat627_assignments"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+npy-writer = "0.1.2"
+colored = "2.0.0"
+
+[build-dependencies]

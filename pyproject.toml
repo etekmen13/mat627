@@ -1,0 +1,14 @@
+[project]
+name = "mat627_assignments"
+version = "0.1.0"
+description = "Programming Assignment Submissions for MAT 627 Numerical Methods with Dr. Lewis."
+readme = "README.md"
+authors = [
+    { name = "Brian Emre Tekmen", email = "etekmen13@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+  "numpy",
+  "matplotlib",
+]
+
