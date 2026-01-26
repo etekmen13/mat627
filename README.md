@@ -9,8 +9,8 @@
 ## Building and Running
 **From Project Root:**
 ```bash
-uv sync
-uv run cargo run
+cargo build
+cargo run
 ```
 
 ## Usage
