@@ -12,7 +12,7 @@
 uv sync
 uv run cargo run [chapter/section#]
 ```
-
+Example: `uv run cargo run 1` to run Chapter 1 programming assignment. 
 ## Usage
 
 Reports to individual programming assignments are found in `reports/`.  
