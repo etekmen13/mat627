@@ -7,6 +7,7 @@
 
 
 ## Building and Running
+**From Project Root:**
 ```bash
 cargo build
 cargo run
@@ -15,7 +16,7 @@ cargo run
 ## Usage
 
 Reports to individual programming assignments are found in `reports/`.  
-\   
+  
 Visuals are provided in `plots/`
 
 
