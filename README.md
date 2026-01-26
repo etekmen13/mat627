@@ -3,7 +3,8 @@
 ## Prerequisites
 
 - Rust (install from [http://rustup.rs](http://rustup.rs))
-- `uv` (install with: `curl -LsSF https://astral.sh/uv/install.sh | sh`)
+- Python (install from [https://www.python.org/downloads/](https://www.python.org/downloads/))
+- `uv` (install from [https://docs.astral.sh/uv/getting-started/installation/](https://docs.astral.sh/uv/getting-started/installation/)
 
 
 ## Building and Running
