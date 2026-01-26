@@ -85,7 +85,7 @@ pub fn test_p1(approx_type: ApproximationType) -> Vec<thread::JoinHandle<()>> {
 }
 
 pub fn plot_p1() -> io::Result<()> {
-    let output = Command::new("python3")
+    let output = Command::new("python")
         .arg("scripts/ch1/plot.py")
         .arg("data/ch1")
         .arg(format!("plots/ch1/plot.png"))
