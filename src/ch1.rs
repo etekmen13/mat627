@@ -1,9 +1,5 @@
-use npy_writer::NumpyWriter;
-use std::fs;
+use crate::util;
 use std::io;
-use std::process::Command;
-use std::thread;
-
 #[allow(dead_code)]
 fn alternating(x: i32, n: i32) -> f64 {
     let x = x as f64;
@@ -29,40 +25,13 @@ fn reciprocal(x: i32, n: i32) -> f64 {
     1.0 / sum
 }
 
-fn write_data(data: &[f64], dir: String, fname: String) {
-    fs::create_dir_all(&dir).unwrap();
-
-    let full_path = format!("{}/{}.npy", &dir, &fname);
-
-    let mut f = fs::File::create(&full_path).unwrap();
-
-    data.write_npy(&mut f).unwrap();
-}
-
-fn rel_error(approx: f64, exact: f64) -> f64 {
-    f64::abs(approx - exact) / f64::abs(exact)
-}
-
-fn compute(x: i32, f: fn(i32, i32) -> f64) -> [f64; 100] {
-    let n_list: [i32; 100] = std::array::from_fn(|i| (i + 1) as i32);
-
-    let mut out_list: [f64; 100] = [0.0; 100];
-    for i in 0..100 {
-        let approx = f(x, n_list[i]);
-        let exact = f64::exp(-x as f64);
-
-        out_list[i] = rel_error(approx, exact);
-    }
-    out_list
-}
-
 #[derive(PartialEq)]
 pub enum ApproximationType {
     Alternating,
     Reciprocal,
 }
 #[must_use]
-pub fn test_p1(approx_type: ApproximationType) -> Vec<thread::JoinHandle<()>> {
+pub fn test_p1(approx_type: ApproximationType) {
     let (name, func) = match approx_type {
         ApproximationType::Alternating => ("Alternating", alternating as fn(i32, i32) -> f64),
         ApproximationType::Reciprocal => ("Reciprocal", reciprocal as fn(i32, i32) -> f64),
@@ -72,30 +41,17 @@ pub fn test_p1(approx_type: ApproximationType) -> Vec<thread::JoinHandle<()>> {
         name
     );
     let x_list: [i32; 13] = [-50, -20, -15, -10, -5, -1, 1, 5, 10, 50, 100, 500, 1000];
+    let n_list: [i32; 100] = std::array::from_fn(|i| (i + 1) as i32);
 
-    let mut handles = vec![];
-    for x in x_list {
-        let handle = thread::spawn(move || {
-            let data: [f64; 100] = compute(x, func);
-            write_data(&data, format!("data/ch1/{}", name), x.to_string())
+    let _ = x_list.into_iter().map(|x| {
+        let exact = f64::exp(-x as f64);
+        let data: [f64; 100] = std::array::from_fn(|j| {
+            let n = n_list[j];
+            let approx = func(x, n);
+            util::rel_error(approx, exact)
         });
-        handles.push(handle);
-    }
-    handles
-}
-
-pub fn plot_p1() -> io::Result<()> {
-    let output = Command::new("python")
-        .arg("scripts/ch1/plot.py")
-        .arg("data/ch1")
-        .arg(format!("plots/ch1/plot.png"))
-        .output()?;
-
-    if !output.status.success() {
-        eprintln!("Python error: {}", String::from_utf8_lossy(&output.stderr));
-    }
-
-    Ok(())
+        util::write_data(&data, format!("data/ch1/{}", name), x.to_string());
+    });
 }
 
 fn find_smallest_unrepresentable_n() -> u64 {

@@ -1,12 +1,11 @@
 import numpy as np
-import sys
 import matplotlib.pyplot as plt
 import os
 
 
-dir = sys.argv[1]
+dir = "data/ch1"
 
-out_file = sys.argv[2]
+out_file = "plots/ch1/plot.png"
 
 
 alternating_dir = f"{dir}/Alternating"
