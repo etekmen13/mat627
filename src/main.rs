@@ -5,7 +5,8 @@ use std::env;
 use std::{fs, io};
 fn main() {
     let args: Vec<String> = env::args().collect();
-
+    // let [a, b, c] = ch2_1::magnitudes(1.92, 2.08);
+    // println!("{:.4e} {:.4e} {:.4e}", a, b, c);
     if args.len() < 2 {
         eprintln!("Please provide the chapter/section number (e.g. '1', '2.1', '2.2')");
         return;
@@ -61,16 +62,16 @@ fn ch2_1() {
     {
         let [standard, horners] = ch2_1::compare_methods::<1000>(a, b);
 
-        println!("Standard Evaluation Max Absolute Error: {}", standard);
-        println!("Horners Evaluation Max Absolute Error: {}", horners);
+        println!("Standard Evaluation Max Absolute Error: {:.4e}", standard);
+        println!("Horners Evaluation Max Absolute Error:  {:.4e}", horners);
     }
 
     println!("\nComparing Standard vs. Horners at N=100,000...\n");
     {
         let [standard, horners] = ch2_1::compare_methods::<100_000>(a, b);
 
-        println!("Standard Evaluation Max Absolute Error: {}", standard);
-        println!("Horners Evaluation Max Absolute Error: {}", horners);
+        println!("Standard Evaluation Max Absolute Error: {:.4e}", standard);
+        println!("Horners Evaluation Max Absolute Error:  {:.4e}", horners);
     }
 
     println!("\n(Grad) Plotting Exact, Standard, and Horners Evalutations at N=100_000...");

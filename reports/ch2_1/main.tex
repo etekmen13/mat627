@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\title{MAT627 Chapter 2.1 Programming Assignment}
+\author{Emre Tekmen}
+\begin{document}
+\maketitle
+
+\section*{Standard vs. Horner Evaluation}
+
+Task: evalute the polynomial
+\[
+  p(x) = (x-2)^9
+\]
+over the domain $D:= \{a+kh\}_{k=0}^{N}$ with $[a,b] = [1.92, 2.08]$ and $h = \frac{b-a} N$.
+
+Treat the factored form $(x-2)^9$ as the ``exact'' reference and compare against the standard expanded-form evaluation and Horner's method.
+
+\paragraph{Observations}
+Let $\tilde p_{\text{std}}$ be the standard evaluation and $\tilde p_{\text{H}}$ be Horner evaluation. The computed maximum absolute errors were (using double precision):
+\begin{center}
+  \begin{tabular}{rcc}
+    \hline
+    $N$ &
+    $\max_{x_k\in D}\,|p(x_k)-\tilde p_{\text{std}}(x_k)|$ &
+    $\max_{x_k\in D}\,|p(x_k)-\tilde p_{\text{H}}(x_k)|$ \\
+    \hline
+    $10^3$   & $2.4897\times 10^{-11}$ & $8.7083\times 10^{-12}$ \\
+    $10^5$   & $3.1605\times 10^{-11}$ & $1.0442\times 10^{-11}$ \\
+    \hline
+  \end{tabular}
+\end{center} 
+
+In both tests, Horner's method reduces the max error by roughly a factor of $3$ compared to the standard expanded evaluation.
+
+\paragraph{Analysis}
+On $[1.92, 2.08]$, the true magnitude is extremely small:
+
+\[
+  \max_{x \in [a,b]} |p(x)| = (0.08)^9 \approx 1.34 \times 10^{-10}.
+\]
+
+However when expanding the polynomial, we see large coefficents like $-4032$ and $5376$. When calculating the polynomial in expanded form, these large intermediate terms must nearly cancel out to achieve a number $\sim\!10^{-10}$. Cancelling near-equal floating point numbers discards significant digits, and what remains is noisy, even with double precision. In the plot, this appears as a band around $p(x)$.
+
+Horner's method helps reduce error because it actually uses fewer floating-point operations, and it avoids explicitly producing high powers of $x^k$ which typically reduces rounding error accumulation. It isn't perfect though, Horner's method cannot eliminate the underlying cancellation that comes from expanding $p(x)$. This analysis is reflected in the smaller, but still present, band around $p(x)$.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/plot.png}
+  \end{center}
+  \caption{}\label{fig:}
+\end{figure}
+
+\end{document}

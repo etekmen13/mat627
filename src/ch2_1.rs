@@ -22,30 +22,22 @@ fn domain<const N: usize>(a: f64, b: f64) -> [f64; N] {
 }
 
 pub fn compare_methods<const N: usize>(lower: f64, upper: f64) -> [f64; 2] {
-    let coeff = vec![
+    let coeff = [
         -512.0, 2304.0, -4608.0, 5376.0, -4032.0, 2016.0, -672.0, 144.0, -18.0, 1.0,
     ];
+
     let d = domain::<N>(lower, upper);
-    let standard: f64 = d
-        .into_iter()
-        .reduce(|a, b| {
-            let exact_a = f64::powi(a - 2.0, 9);
-            let exact_b = f64::powi(b - 2.0, 9);
-            let diff_a = f64::abs(exact_a - p_standard(a, &coeff));
-            let diff_b = f64::abs(exact_b - p_standard(b, &coeff));
-            diff_a.max(diff_b)
-        })
-        .unwrap_or(f64::NEG_INFINITY);
-    let horners: f64 = d
-        .into_iter()
-        .reduce(|a, b| {
-            let exact_a = f64::powi(a - 2.0, 9);
-            let exact_b = f64::powi(b - 2.0, 9);
-            let diff_a = f64::abs(exact_a - p_horners(a, &coeff));
-            let diff_b = f64::abs(exact_b - p_horners(b, &coeff));
-            diff_a.max(diff_b)
-        })
-        .unwrap_or(f64::NEG_INFINITY);
+
+    let standard = d
+        .iter()
+        .map(|&x| ((x - 2.0).powi(9) - p_standard(x, &coeff)).abs())
+        .fold(0.0_f64, f64::max);
+
+    let horners = d
+        .iter()
+        .map(|&x| ((x - 2.0).powi(9) - p_horners(x, &coeff)).abs())
+        .fold(0.0_f64, f64::max);
+
     [standard, horners]
 }
 
@@ -66,4 +58,28 @@ pub fn plot_methods<const N: usize>(lower: f64, upper: f64) -> io::Result<()> {
     util::write_data(&horners, data_path.to_string(), String::from("horners"));
 
     util::plot("ch2_1")
+}
+
+#[allow(dead_code)]
+pub fn magnitudes(lower: f64, upper: f64) -> [f64; 3] {
+    let d = domain::<1_00_000>(lower, upper);
+    let coeff = vec![
+        -512.0, 2304.0, -4608.0, 5376.0, -4032.0, 2016.0, -672.0, 144.0, -18.0, 1.0,
+    ];
+    let exact = d
+        .iter()
+        .map(|&x| (x - 2.0).powi(9).abs())
+        .fold(0.0, f64::max);
+
+    let standard = d
+        .iter()
+        .map(|&x| p_standard(x, &coeff).abs())
+        .fold(0.0, f64::max);
+
+    let horners = d
+        .iter()
+        .map(|&x| p_horners(x, &coeff).abs())
+        .fold(0.0, f64::max);
+
+    [exact, standard, horners]
 }
