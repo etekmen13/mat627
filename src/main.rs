@@ -1,5 +1,6 @@
 mod ch1;
 mod ch2_1;
+mod ch2_2;
 mod util;
 use std::env;
 use std::{fs, io};
