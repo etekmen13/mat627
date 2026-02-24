@@ -18,7 +18,7 @@ fn p_horners(x: f64, coeff: &[f64]) -> f64 {
 /// `b` - upper bound (inclusive)
 fn domain<const N: usize>(a: f64, b: f64) -> [f64; N] {
     let h: f64 = (b - a) / (N as f64);
-    std::array::from_fn(|k| a + (k as f64) * h)
+    std::array::from_fn(|k| h.mul_add(k as f64, a))
 }
 
 pub fn compare_methods<const N: usize>(lower: f64, upper: f64) -> [f64; 2] {
