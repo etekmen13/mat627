@@ -22,6 +22,10 @@ fn main() {
             make_dirs("ch2_1").expect("Error making directories.");
             ch2_1();
         }
+        "2.2" => {
+            make_dirs("ch2_2").expect("Error making directories.");
+            ch2_2();
+        }
 
         _ => println!("Chapter/section unrecognized."),
     }
@@ -77,4 +81,23 @@ fn ch2_1() {
 
     println!("\n(Grad) Plotting Exact, Standard, and Horners Evalutations at N=100_000...");
     ch2_1::plot_methods::<100_000>(a, b).expect("Error plotting");
+}
+fn ch2_2() {
+    println!("\n=== Chapter 2.2 Programming Project ===");
+    let rows = ch2_2::compare(1.0);
+    for r in &rows {
+        println!(
+            "{:<10} {:<8} h={:<12.5e} approx={:<16.8e} err={:<16.8e} order={:?}",
+            r.case,
+            r.method,
+            r.h,
+            r.approx,
+            r.err,
+            r.order.unwrap_or(0.0)
+        );
+    }
+    println!("Plotting Data...");
+    ch2_2::write_compare_npy(&rows);
+    let _ = util::plot("ch2_2").expect("Error plotting values.");
+    println!("View report in reports/ch2_2/2.2.pdf");
 }

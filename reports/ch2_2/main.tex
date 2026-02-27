@@ -1,0 +1,39 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\title{MAT627 Chapter 2.2 Programming Assignment}
+\author{Emre Tekmen}
+\begin{document}
+\maketitle
+\section{Finite-Difference Approximation Results}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/sqrt_x_1_approx.png}
+    \caption{Approximation overlay for $\sqrt{x+1}$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/sqrt_x_1_error.png}
+    \caption{Error overlay for $\sqrt{x+1}$.}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/exp_x_approx.png}
+    \caption{Approximation overlay for $e^x$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/exp_x_error.png}
+    \caption{Error overlay for $e^x$.}
+\end{figure}
+
+\input{figures/fd_tables.tex}
+\end{document}
+
+
