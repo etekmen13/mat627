@@ -62,7 +62,7 @@ pub fn plot_methods<const N: usize>(lower: f64, upper: f64) -> io::Result<()> {
 
 #[allow(dead_code)]
 pub fn magnitudes(lower: f64, upper: f64) -> [f64; 3] {
-    let d = domain::<1_00_000>(lower, upper);
+    let d = domain::<100_000>(lower, upper);
     let coeff = vec![
         -512.0, 2304.0, -4608.0, 5376.0, -4032.0, 2016.0, -672.0, 144.0, -18.0, 1.0,
     ];

@@ -30,7 +30,6 @@ pub enum ApproximationType {
     Alternating,
     Reciprocal,
 }
-#[must_use]
 pub fn test_p1(approx_type: ApproximationType) {
     let (name, func) = match approx_type {
         ApproximationType::Alternating => ("Alternating", alternating as fn(i32, i32) -> f64),

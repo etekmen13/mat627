@@ -1,6 +1,7 @@
 mod ch1;
 mod ch2_1;
 mod ch2_2;
+mod ch2_3;
 mod util;
 use std::env;
 use std::{fs, io};
@@ -9,7 +10,7 @@ fn main() {
     // let [a, b, c] = ch2_1::magnitudes(1.92, 2.08);
     // println!("{:.4e} {:.4e} {:.4e}", a, b, c);
     if args.len() < 2 {
-        eprintln!("Please provide the chapter/section number (e.g. '1', '2.1', '2.2')");
+        eprintln!("Please provide the chapter/section number (e.g. '1', '2.1', '2.2', '2.3')");
         return;
     }
     match args[1].as_str() {
@@ -25,6 +26,10 @@ fn main() {
         "2.2" => {
             make_dirs("ch2_2").expect("Error making directories.");
             ch2_2();
+        }
+        "2.3" => {
+            make_dirs("ch2_3").expect("Error making directories.");
+            ch2_3();
         }
 
         _ => println!("Chapter/section unrecognized."),
@@ -42,8 +47,8 @@ fn make_dirs(name: &str) -> io::Result<()> {
 }
 fn ch1p1() {
     println!("\n=== Chapter 1 Problem 1 ===");
-    let _ = ch1::test_p1(ch1::ApproximationType::Alternating);
-    let _ = ch1::test_p1(ch1::ApproximationType::Reciprocal);
+    ch1::test_p1(ch1::ApproximationType::Alternating);
+    ch1::test_p1(ch1::ApproximationType::Reciprocal);
     println!("Done.");
 
     println!("Plotting data...");
@@ -98,6 +103,12 @@ fn ch2_2() {
     }
     println!("Plotting Data...");
     ch2_2::write_compare_npy(&rows);
-    let _ = util::plot("ch2_2").expect("Error plotting values.");
+    util::plot("ch2_2").expect("Error plotting values.");
     println!("View report in reports/ch2_2/2.2.pdf");
+}
+
+fn ch2_3() {
+    println!("\n=== Chapter 2.3 Programming Project ===");
+    ch2_3::generate().expect("Error generating chapter 2.3 outputs");
+    println!("View report in reports/ch2_3/2.3.pdf");
 }
