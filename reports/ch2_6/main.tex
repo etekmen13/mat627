@@ -8,31 +8,6 @@
 \begin{document}
 \maketitle
 
-\section{Problem Setup}
-We solve
-\[
-T\mathbf{x}=\mathbf{b},
-\]
-where $T\in\mathbb{R}^{n\times n}$ is tridiagonal with
-\[
-t_{ij}=
-\begin{cases}
-1, & |i-j|=1,\\
-i+1, & i=j,\\
-0, & \text{otherwise,}
-\end{cases}
-\qquad
-b_i=1.
-\]
-The implementation stores only the lower diagonal $\ell$, diagonal $d$, upper diagonal $u$, right-hand side $\mathbf{b}$, and solution $\mathbf{x}$, then applies Algorithm 2.6 (Thomas elimination and back substitution). After solving, it computes the residual
-\[
-\mathbf{r}=\mathbf{b}-T\mathbf{x}
-\]
-using tridiagonal matrix-vector multiplication and reports
-\[
-e_n=\max_{1\le i\le n}|r_i|.
-\]
-
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.78\textwidth]{figures/residual_profiles.png}
