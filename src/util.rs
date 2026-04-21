@@ -1,6 +1,7 @@
 use npy_writer::NumpyWriter;
 use std::fs;
 use std::io;
+use std::path::Path;
 use std::process::{Command, Stdio};
 
 /// Write an array of f64 to an .npy file
@@ -27,17 +28,47 @@ pub fn rel_error(approx: f64, exact: f64) -> f64 {
 /// Assumes data in data/{chapter}
 /// Places plot  in plots/{chapter}
 pub fn plot(chapter: &str) -> io::Result<()> {
-    let status = Command::new("python")
-        .arg(format!("scripts/{}/plot.py", chapter))
+    run_python_script(&format!("scripts/{}/plot.py", chapter))
+}
+
+pub fn run_python_script(path: &str) -> io::Result<()> {
+    let mut cmd = Command::new("python");
+    cmd.arg(path);
+    run_command(&mut cmd, &format!("python script failed: {path}"))
+}
+
+pub fn copy_file(src: &str, dst: &str) -> io::Result<()> {
+    if let Some(parent) = Path::new(dst).parent() {
+        fs::create_dir_all(parent)?;
+    }
+    fs::copy(src, dst)?;
+    Ok(())
+}
+
+pub fn build_report(report_dir: &str, output_name: &str) -> io::Result<()> {
+    let mut cmd = Command::new("latexmk");
+    cmd.arg("-r")
+        .arg(".latexmkrc")
+        .arg("-pdf")
+        .arg("main.tex")
+        .current_dir(report_dir);
+
+    run_command(&mut cmd, &format!("latex build failed: {report_dir}"))?;
+    copy_file(
+        &format!("{report_dir}/build/main.pdf"),
+        &format!("{report_dir}/{output_name}"),
+    )
+}
+
+fn run_command(command: &mut Command, message: &str) -> io::Result<()> {
+    let status = command
         .stdout(Stdio::inherit())
         .stderr(Stdio::inherit())
         .status()?;
 
-    if !status.success() {
-        return Err(io::Error::new(
-            io::ErrorKind::Other,
-            format!("plot failed: {status}"),
-        ));
+    if status.success() {
+        Ok(())
+    } else {
+        Err(io::Error::other(format!("{message}: {status}")))
     }
-    Ok(())
 }
