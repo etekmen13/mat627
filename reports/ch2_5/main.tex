@@ -1,0 +1,64 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\title{MAT627 Chapter 2.5 Programming Assignment}
+\author{Emre Tekmen}
+\begin{document}
+\maketitle
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.82\textwidth]{figures/trapezoids.png}
+    \caption{Representative trapezoid-rule geometry using the piecewise linear interpolant with $N=4$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/error.png}
+    \caption{Error decay for the three test problems.}
+\end{figure}
+
+\input{figures/tables.tex}
+
+\section{Discussion}
+For Parts 1 and 2, the integrand is
+\[
+f(x)=x^2e^{-x},
+\qquad
+f''(x)=(x^2-4x+2)e^{-x},
+\]
+so $f''$ is continuous and bounded on both closed intervals. Therefore Theorem 2.3 guarantees at least second-order convergence.
+
+In Part 1, the observed rate approaches $2$, which matches the theorem directly.
+
+In Part 2, the observed rate is closer to $4$.  This means the $O(h^2)$ term vanished. Indeed,
+\[
+f'(x)=(2x-x^2)e^{-x},
+\]
+so
+\[
+f'(0)=f'(2)=0.
+\]
+The leading trapezoid-rule error term is proportional to $f'(b)-f'(a)$, so on $[0,2]$ it cancels and the next nonzero term gives fourth-order behavior.
+
+For Part 3, the integrand is
+\[
+f(x)=\sqrt{x},
+\qquad
+f''(x)=-\frac{1}{4x^{3/2}},
+\]
+which is singular at $x=0$. Theorem 2.3 does not apply on $[0,1]$. On the first subinterval $[0,h]$, the trapezoid rule uses the line through $(0,0)$ and $(h,\sqrt{h})$, so
+\[
+T_{[0,h]} = \frac{h}{2}\sqrt{h} = \frac{1}{2}h^{3/2},
+\qquad
+\int_0^h \sqrt{x}\,dx = \frac{2}{3}h^{3/2}.
+\]
+Hence the first cell alone contributes an error of
+\[
+\frac{2}{3}h^{3/2}-\frac{1}{2}h^{3/2} = \frac{1}{6}h^{3/2},
+\]
+which explains why the overall convergence rate is approximately $3/2$ rather than $2$.
+
+\end{document}
