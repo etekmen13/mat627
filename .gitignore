@@ -2,4 +2,4 @@
 .venv/
 *.egg-info
 .codex/
-
+.codex

@@ -2,6 +2,7 @@ mod ch1;
 mod ch2_1;
 mod ch2_2;
 mod ch2_3;
+mod ch2_4;
 mod util;
 use std::env;
 use std::{fs, io};
@@ -10,7 +11,9 @@ fn main() {
     // let [a, b, c] = ch2_1::magnitudes(1.92, 2.08);
     // println!("{:.4e} {:.4e} {:.4e}", a, b, c);
     if args.len() < 2 {
-        eprintln!("Please provide the chapter/section number (e.g. '1', '2.1', '2.2', '2.3')");
+        eprintln!(
+            "Please provide the chapter/section number (e.g. '1', '2.1', '2.2', '2.3', '2.4')"
+        );
         return;
     }
     match args[1].as_str() {
@@ -30,6 +33,10 @@ fn main() {
         "2.3" => {
             make_dirs("ch2_3").expect("Error making directories.");
             ch2_3();
+        }
+        "2.4" => {
+            make_dirs("ch2_4").expect("Error making directories.");
+            ch2_4();
         }
 
         _ => println!("Chapter/section unrecognized."),
@@ -111,4 +118,10 @@ fn ch2_3() {
     println!("\n=== Chapter 2.3 Programming Project ===");
     ch2_3::generate().expect("Error generating chapter 2.3 outputs");
     println!("View report in reports/ch2_3/2.3.pdf");
+}
+
+fn ch2_4() {
+    println!("\n=== Chapter 2.4 Programming Project ===");
+    ch2_4::generate().expect("Error generating chapter 2.4 outputs");
+    println!("View report in reports/ch2_4/2.4.pdf");
 }

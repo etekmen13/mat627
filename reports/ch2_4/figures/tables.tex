@@ -1,0 +1,48 @@
+% Auto-generated from data/ch2_4/*.npy
+% Requires \usepackage{booktabs}
+
+\section{Part 2}
+\noindent Uniform piecewise linear interpolation on $[1,2]$.
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\caption{Maximum fine-grid error for $f(x)=x^{1/3}$ on $[1,2]$.}
+\label{tab:smooth}
+\begin{tabular}{rrrr}
+\toprule
+$N$ & $h$ & $E_h = \max_{z_i \in D}|q_N(z_i) - f(z_i)|$ & Rate \\
+\midrule
+1 & 1 & $1.488703\times 10^{-2}$ & -- \\
+2 & 0.5 & $4.875503\times 10^{-3}$ & 1.610433 \\
+4 & 0.25 & $1.434610\times 10^{-3}$ & 1.764892 \\
+8 & 0.125 & $3.929018\times 10^{-4}$ & 1.868418 \\
+16 & 0.0625 & $1.031247\times 10^{-4}$ & 1.929779 \\
+32 & 0.03125 & $2.641642\times 10^{-5}$ & 1.964883 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Part 3}
+\noindent Uniform piecewise linear interpolation on $[0,1]$.
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.15}
+\caption{Maximum fine-grid error for $f(x)=x^{1/3}$ on $[0,1]$.}
+\label{tab:singular}
+\begin{tabular}{rrrr}
+\toprule
+$N$ & $h$ & $E_h = \max_{z_i \in D}|q_N(z_i) - f(z_i)|$ & Rate \\
+\midrule
+1 & 1 & $3.848998\times 10^{-1}$ & -- \\
+2 & 0.5 & $3.054952\times 10^{-1}$ & 0.333333 \\
+4 & 0.25 & $2.424717\times 10^{-1}$ & 0.333333 \\
+8 & 0.125 & $1.924499\times 10^{-1}$ & 0.333333 \\
+16 & 0.0625 & $1.527476\times 10^{-1}$ & 0.333333 \\
+32 & 0.03125 & $1.212358\times 10^{-1}$ & 0.333333 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -32,9 +32,18 @@ pub fn plot(chapter: &str) -> io::Result<()> {
 }
 
 pub fn run_python_script(path: &str) -> io::Result<()> {
-    let mut cmd = Command::new("python");
-    cmd.arg(path);
-    run_command(&mut cmd, &format!("python script failed: {path}"))
+    if command_exists("uv") && Path::new("pyproject.toml").exists() {
+        let mut cmd = Command::new("uv");
+        cmd.env("UV_CACHE_DIR", "/tmp/uv-cache");
+        cmd.env("MPLCONFIGDIR", "/tmp/matplotlib");
+        cmd.arg("run").arg("python").arg(path);
+        run_command(&mut cmd, &format!("python script failed: {path}"))
+    } else {
+        let mut cmd = Command::new(python_executable()?);
+        cmd.env("MPLCONFIGDIR", "/tmp/matplotlib");
+        cmd.arg(path);
+        run_command(&mut cmd, &format!("python script failed: {path}"))
+    }
 }
 
 pub fn copy_file(src: &str, dst: &str) -> io::Result<()> {
@@ -71,4 +80,26 @@ fn run_command(command: &mut Command, message: &str) -> io::Result<()> {
     } else {
         Err(io::Error::other(format!("{message}: {status}")))
     }
+}
+
+fn python_executable() -> io::Result<&'static str> {
+    if command_exists("python") {
+        Ok("python")
+    } else if command_exists("python3") {
+        Ok("python3")
+    } else {
+        Err(io::Error::new(
+            io::ErrorKind::NotFound,
+            "neither 'python' nor 'python3' is available",
+        ))
+    }
+}
+
+fn command_exists(program: &str) -> bool {
+    Command::new(program)
+        .arg("--version")
+        .stdout(Stdio::null())
+        .stderr(Stdio::null())
+        .status()
+        .is_ok()
 }

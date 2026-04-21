@@ -1,0 +1,49 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\title{MAT627 Chapter 2.4 Programming Assignment}
+\author{Emre Tekmen}
+\begin{document}
+\maketitle
+
+We approximate $f(x)=x^{1/3}$ by uniform piecewise linear interpolation and measure the error on the fine grid
+\[
+D = \left\{z_i\right\}_{i=0}^{1000},
+\qquad
+z_i = a + i\frac{b-a}{1000}.
+\]
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/approximation.png}
+    \caption{Part 1: $q_4(x)$ and $f(x)=x^{1/3}$ on $[0,2]$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/error.png}
+    \caption{Error decay on the fine grid for the intervals $[1,2]$ and $[0,1]$.}
+\end{figure}
+
+\input{figures/tables.tex}
+
+\section{Discussion}
+On $[1,2]$, the second derivative
+\[
+f''(x) = -\frac{2}{9x^{5/3}}
+\]
+is bounded, so the standard piecewise linear interpolation estimate applies and the observed rate is approximately $2$.
+
+On $[0,1]$, the second derivative is singular at $x=0$, so the theorem does not apply. On the first cell $[0,h]$, writing $x=th$ with $0 \le t \le 1$, the interpolant is
+\[
+q_N(x) = t h^{1/3},
+\]
+which gives
+\[
+|f(x)-q_N(x)| = h^{1/3}|t^{1/3}-t|.
+\]
+Therefore the dominant error behaves like $O(h^{1/3})$, so the rate is not second order near the origin and instead approaches $1/3$.
+
+\end{document}
