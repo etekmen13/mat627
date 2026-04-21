@@ -1,4 +1,4 @@
-# Fdb version 4
+# Fdb version 3
 ["pdflatex"] 1776729889.69728 "main.tex" "build/main.pdf" "main" 1776729889.91672 0
   "/etc/texmf/web2c/texmf.cnf" 1770473222.54636 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -98,5 +98,9 @@
   "build/main.aux"
   "build/main.log"
   "build/main.out"
+["pdflatex"] 1776730025.99407 "main.tex" "build/main.pdf" "main" 1776730026.06354 2
+  (generated)
+  "build/main.aux"
+  "build/main.log"
   "build/main.pdf"
   (rewritten before read)

@@ -53,7 +53,7 @@ fn ch1p1() {
 
     println!("Plotting data...");
 
-    util::plot("ch1").expect("plot error");
+    util::plot("ch0").expect("plot error");
 
     println!("Done.");
 }
