@@ -5,6 +5,7 @@ mod ch2_3;
 mod ch2_4;
 mod ch2_5;
 mod ch2_6;
+mod ch2_7;
 mod util;
 use std::env;
 use std::{fs, io};
@@ -47,6 +48,10 @@ fn main() {
         "2.6" => {
             make_dirs("ch2_6").expect("Error making directories.");
             ch2_6();
+        }
+        "2.7" => {
+            make_dirs("ch2_7").expect("Error making directories.");
+            ch2_7();
         }
 
         _ => println!("Chapter/section unrecognized."),
@@ -146,4 +151,10 @@ fn ch2_6() {
     println!("\n=== Chapter 2.6 Programming Project ===");
     ch2_6::generate().expect("Error generating chapter 2.6 outputs");
     println!("View report in reports/ch2_6/2.6.pdf");
+}
+
+fn ch2_7() {
+    println!("\n=== Chapter 2.7 Programming Project ===");
+    ch2_7::generate().expect("Error generating chapter 2.7 outputs");
+    println!("View report in reports/ch2_7/2.7.pdf");
 }

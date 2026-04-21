@@ -1,0 +1,84 @@
+% Auto-generated from data/ch2_7/*.npy
+% Requires \usepackage{booktabs}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{7pt}
+\renewcommand{\arraystretch}{1.15}
+\caption{Finite-difference solution for $-u'' + u = 4e^{-x} - 4xe^{-x}$ with $N=5$.}
+\label{tab:part1}
+\begin{tabular}{rrrr}
+\toprule
+$x_k$ & $U_k$ & $u(x_k)$ & $u(x_k)-U_k$ \\
+\midrule
+0.2 & $1.288292\times 10^{-1}$ & $1.309969\times 10^{-1}$ & $2.167680\times 10^{-3}$ \\
+0.4 & $1.580141\times 10^{-1}$ & $1.608768\times 10^{-1}$ & $2.862697\times 10^{-3}$ \\
+0.6 & $1.291688\times 10^{-1}$ & $1.317148\times 10^{-1}$ & $2.545964\times 10^{-3}$ \\
+0.8 & $7.036635\times 10^{-2}$ & $7.189263\times 10^{-2}$ & $1.526284\times 10^{-3}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{7pt}
+\renewcommand{\arraystretch}{1.15}
+\caption{Maximum nodal error for part 2.}
+\label{tab:part2}
+\begin{tabular}{rrrr}
+\toprule
+$N$ & $h$ & $E_h = \max_k |u(x_k)-U_k|$ & Rate \\
+\midrule
+5 & 0.2 & $2.862697\times 10^{-3}$ & -- \\
+10 & 0.1 & $7.199515\times 10^{-4}$ & 1.991403 \\
+20 & 0.05 & $1.803450\times 10^{-4}$ & 1.997140 \\
+40 & 0.025 & $4.520950\times 10^{-5}$ & 1.996062 \\
+80 & 0.0125 & $1.130343\times 10^{-5}$ & 1.999865 \\
+160 & 0.00625 & $2.825924\times 10^{-6}$ & 1.999966 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{7pt}
+\renewcommand{\arraystretch}{1.15}
+\caption{Maximum nodal error for part 3.}
+\label{tab:part3}
+\begin{tabular}{rrrr}
+\toprule
+$N$ & $h$ & $E_h = \max_k |u(x_k)-U_k|$ & Rate \\
+\midrule
+5 & 0.2 & $2.775558\times 10^{-17}$ & -- \\
+10 & 0.1 & $4.996004\times 10^{-16}$ & -- \\
+20 & 0.05 & $1.665335\times 10^{-16}$ & -- \\
+40 & 0.025 & $5.717649\times 10^{-15}$ & -- \\
+80 & 0.0125 & $1.945666\times 10^{-14}$ & -- \\
+160 & 0.00625 & $2.231548\times 10^{-14}$ & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{7pt}
+\renewcommand{\arraystretch}{1.15}
+\caption{Maximum nodal error for part 4.}
+\label{tab:part4}
+\begin{tabular}{rrrr}
+\toprule
+$N$ & $h$ & $E_h = \max_k |u(x_k)-U_k|$ & Rate \\
+\midrule
+5 & 0.2 & $5.445658\times 10^{-2}$ & -- \\
+10 & 0.1 & $2.828373\times 10^{-2}$ & 0.945134 \\
+20 & 0.05 & $1.418957\times 10^{-2}$ & 0.995142 \\
+40 & 0.025 & $7.106748\times 10^{-3}$ & 0.997569 \\
+80 & 0.0125 & $3.558012\times 10^{-3}$ & 0.998118 \\
+160 & 0.00625 & $1.779658\times 10^{-3}$ & 0.999471 \\
+\bottomrule
+\end{tabular}
+\end{table}
