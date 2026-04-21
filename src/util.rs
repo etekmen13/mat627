@@ -56,9 +56,8 @@ pub fn copy_file(src: &str, dst: &str) -> io::Result<()> {
 
 pub fn build_report(report_dir: &str, output_name: &str) -> io::Result<()> {
     let mut cmd = Command::new("latexmk");
-    cmd.arg("-r")
-        .arg(".latexmkrc")
-        .arg("-pdf")
+    cmd.arg("-pdf")
+        .arg("-outdir=build")
         .arg("main.tex")
         .current_dir(report_dir);
 
