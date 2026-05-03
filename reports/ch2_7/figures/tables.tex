@@ -1,6 +1,7 @@
 % Auto-generated from data/ch2_7/*.npy
 % Requires \usepackage{booktabs}
 
+\section{Part 1}
 \begin{table}[htbp]
 \centering
 \scriptsize
@@ -20,6 +21,8 @@ $x_k$ & $U_k$ & $u(x_k)$ & $u(x_k)-U_k$ \\
 \end{tabular}
 \end{table}
 
+\section{Part 2}
+\noindent Discrete error for $-u'' + u = 4e^{-x} - 4xe^{-x}$ with exact solution $u(x)=x(1-x)e^{-x}$.
 \begin{table}[htbp]
 \centering
 \scriptsize
@@ -41,6 +44,8 @@ $N$ & $h$ & $E_h = \max_k |u(x_k)-U_k|$ & Rate \\
 \end{tabular}
 \end{table}
 
+\section{Part 3}
+\noindent Discrete error for $-u'' + u = 2 + x - x^2$ with exact solution $u(x)=x(1-x)$.
 \begin{table}[htbp]
 \centering
 \scriptsize
@@ -62,6 +67,8 @@ $N$ & $h$ & $E_h = \max_k |u(x_k)-U_k|$ & Rate \\
 \end{tabular}
 \end{table}
 
+\section{Part 4}
+\noindent Discrete error for $-u'' + u' + u = -(x-1)(x^2-11)$ using the backward difference $(u(x)-u(x-h))/h$ for $u'$.
 \begin{table}[htbp]
 \centering
 \scriptsize

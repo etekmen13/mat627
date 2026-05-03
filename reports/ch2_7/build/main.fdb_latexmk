@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1776734725.62895 "main.tex" "build/main.pdf" "main" 1776734725.91963 0
+["pdflatex"] 1776739137.22094 "main.tex" "build/main.pdf" "main" 1776739137.51467 0
   "/etc/texmf/web2c/texmf.cnf" 1770473222.54636 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -91,12 +91,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1772152852.27733 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1772152860 6831118 2e3091b387a986499ae070f2057f0b3f ""
-  "build/main.aux" 1776734725.8906 2094 c69761c532e00b1b9a43612c17f9d5f2 "pdflatex"
-  "build/main.out" 1776734725.8906 558 0acb2322245df531c2a0906c8aed0b0e "pdflatex"
-  "figures/approximation.png" 1776734725.57459 83332 f7b1e59f6ced58c037e3ca708009a095 ""
-  "figures/error.png" 1776734725.57459 77945 7a209ea1fe6435d59a9ae81e896b3a98 ""
-  "figures/tables.tex" 1776734725.56659 2907 77372a895d7f95c8fd4352a9030abf79 ""
-  "main.tex" 1776734705.78638 2311 2737cb1a7a02cd392b4da1695396d115 ""
+  "build/main.aux" 1776739137.48627 1867 8b8d0422c855c5bc9d371cb9cb119811 "pdflatex"
+  "build/main.out" 1776739137.48627 304 7b4336d621c51edbb46323b237ccf991 "pdflatex"
+  "figures/approximation.png" 1776739136.87427 83332 f7b1e59f6ced58c037e3ca708009a095 ""
+  "figures/error.png" 1776739136.87427 77945 7a209ea1fe6435d59a9ae81e896b3a98 ""
+  "figures/tables.tex" 1776739136.86627 2907 77372a895d7f95c8fd4352a9030abf79 ""
+  "main.tex" 1776735919.51445 676 67e6d255211e6ce87c96d66c76696eeb ""
   (generated)
   "build/main.aux"
   "build/main.log"

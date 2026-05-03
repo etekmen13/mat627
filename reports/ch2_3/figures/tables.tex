@@ -2,12 +2,13 @@
 % Requires \usepackage{booktabs}
 % Requires \usepackage{graphicx}
 
+\section{Part 1}
 \begin{table}[htbp]
 \centering
 \scriptsize
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.15}
-\caption{Part 1}
+\caption{Euler's method with $h=\tfrac{1}{4}$.}
 \label{tab:part1}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{rrrrr}
@@ -24,6 +25,7 @@ $k$ & $t_k$ & $y_k$ & $y(t_k)$ & Error $= y(t_k) - y_k$ \\
 }
 \end{table}
 
+\section{Part 3}
 \begin{table}[htbp]
 \centering
 \scriptsize
@@ -44,6 +46,7 @@ $h$ & $y_N$ & $E_h = y(2) - y_N$ & Rate \\
 \end{tabular}
 \end{table}
 
+\section{Part 4}
 \begin{table}[htbp]
 \centering
 \scriptsize
@@ -64,6 +67,7 @@ $h$ & $y_N$ & $E_h = y(2) - y_N$ & Rate \\
 \end{tabular}
 \end{table}
 
+\section{Part 5}
 \begin{table}[htbp]
 \centering
 \scriptsize
@@ -73,7 +77,7 @@ $h$ & $y_N$ & $E_h = y(2) - y_N$ & Rate \\
 \label{tab:part5}
 \begin{tabular}{rrrr}
 \toprule
-$h$ & $\widetilde y_N$ & $E_h = y(2) - \widetilde y_N$ & Rate \\
+$h$ & $y_N^r$ & $E_h = y(2) - y_N^r$ & Rate \\
 \midrule
 0.25 & $6.826012\times 10^{-1}$ & $-1.529141\times 10^{-1}$ & -- \\
 0.125 & $5.566786\times 10^{-1}$ & $-2.699153\times 10^{-2}$ & 2.502143 \\
