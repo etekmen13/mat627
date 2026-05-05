@@ -61,7 +61,7 @@ pub fn build_report(report_dir: &str, output_name: &str) -> io::Result<()> {
         .arg("main.tex")
         .current_dir(report_dir);
 
-    run_command(&mut cmd, &format!("latex build failed: {report_dir}"))?;
+    run_command_quiet(&mut cmd, &format!("latex build failed: {report_dir}"))?;
     copy_file(
         &format!("{report_dir}/build/main.pdf"),
         &format!("{report_dir}/{output_name}"),
@@ -79,6 +79,33 @@ fn run_command(command: &mut Command, message: &str) -> io::Result<()> {
     } else {
         Err(io::Error::other(format!("{message}: {status}")))
     }
+}
+
+fn run_command_quiet(command: &mut Command, message: &str) -> io::Result<()> {
+    let output = command.output()?;
+
+    if output.status.success() {
+        return Ok(());
+    }
+
+    let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
+    let stderr = String::from_utf8_lossy(&output.stderr).trim().to_string();
+    let mut details = Vec::new();
+
+    if !stdout.is_empty() {
+        details.push(format!("stdout:\n{stdout}"));
+    }
+    if !stderr.is_empty() {
+        details.push(format!("stderr:\n{stderr}"));
+    }
+
+    let error = if details.is_empty() {
+        format!("{message}: {}", output.status)
+    } else {
+        format!("{message}: {}\n{}", output.status, details.join("\n\n"))
+    };
+
+    Err(io::Error::other(error))
 }
 
 fn python_executable() -> io::Result<&'static str> {

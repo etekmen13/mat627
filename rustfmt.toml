@@ -1,0 +1,4 @@
+# rustfmt.toml
+
+unstable_features = true
+skip_macro_invocations = ["expr"]

@@ -1,0 +1,566 @@
+% Auto-generated from data/ch3/*.npy
+% Requires \usepackage{booktabs}
+
+\section{Experiment 1}
+\subsection*{Unknown Negative Root}
+\subsection*{Bisection}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Bisection on $[-3,-2]$ for the polynomial in Experiment 1.}
+\label{tab:exp1-neg-bisection}
+\begin{tabular}{rrrrr}
+\toprule
+$n$ & $a_n$ & $b_n$ & $x_n$ & $\frac{1}{2}(b_n-a_n)$ \\
+\midrule
+0 & $-3.000000\times 10^{0}$ & $-2.000000\times 10^{0}$ & $-2.500000\times 10^{0}$ & $5.000000\times 10^{-1}$ \\
+1 & $-2.500000\times 10^{0}$ & $-2.000000\times 10^{0}$ & $-2.250000\times 10^{0}$ & $2.500000\times 10^{-1}$ \\
+2 & $-2.500000\times 10^{0}$ & $-2.250000\times 10^{0}$ & $-2.375000\times 10^{0}$ & $1.250000\times 10^{-1}$ \\
+3 & $-2.500000\times 10^{0}$ & $-2.375000\times 10^{0}$ & $-2.437500\times 10^{0}$ & $6.250000\times 10^{-2}$ \\
+4 & $-2.500000\times 10^{0}$ & $-2.437500\times 10^{0}$ & $-2.468750\times 10^{0}$ & $3.125000\times 10^{-2}$ \\
+5 & $-2.500000\times 10^{0}$ & $-2.468750\times 10^{0}$ & $-2.484375\times 10^{0}$ & $1.562500\times 10^{-2}$ \\
+6 & $-2.484375\times 10^{0}$ & $-2.468750\times 10^{0}$ & $-2.476562\times 10^{0}$ & $7.812500\times 10^{-3}$ \\
+7 & $-2.484375\times 10^{0}$ & $-2.476562\times 10^{0}$ & $-2.480469\times 10^{0}$ & $3.906250\times 10^{-3}$ \\
+8 & $-2.480469\times 10^{0}$ & $-2.476562\times 10^{0}$ & $-2.478516\times 10^{0}$ & $1.953125\times 10^{-3}$ \\
+9 & $-2.478516\times 10^{0}$ & $-2.476562\times 10^{0}$ & $-2.477539\times 10^{0}$ & $9.765625\times 10^{-4}$ \\
+10 & $-2.477539\times 10^{0}$ & $-2.476562\times 10^{0}$ & $-2.477051\times 10^{0}$ & $4.882812\times 10^{-4}$ \\
+11 & $-2.477539\times 10^{0}$ & $-2.477051\times 10^{0}$ & $-2.477295\times 10^{0}$ & $2.441406\times 10^{-4}$ \\
+12 & $-2.477295\times 10^{0}$ & $-2.477051\times 10^{0}$ & $-2.477173\times 10^{0}$ & $1.220703\times 10^{-4}$ \\
+13 & $-2.477295\times 10^{0}$ & $-2.477173\times 10^{0}$ & $-2.477234\times 10^{0}$ & $6.103516\times 10^{-5}$ \\
+14 & $-2.477234\times 10^{0}$ & $-2.477173\times 10^{0}$ & $-2.477203\times 10^{0}$ & $3.051758\times 10^{-5}$ \\
+15 & $-2.477234\times 10^{0}$ & $-2.477203\times 10^{0}$ & $-2.477219\times 10^{0}$ & $1.525879\times 10^{-5}$ \\
+16 & $-2.477234\times 10^{0}$ & $-2.477219\times 10^{0}$ & $-2.477226\times 10^{0}$ & $7.629395\times 10^{-6}$ \\
+17 & $-2.477226\times 10^{0}$ & $-2.477219\times 10^{0}$ & $-2.477222\times 10^{0}$ & $3.814697\times 10^{-6}$ \\
+18 & $-2.477226\times 10^{0}$ & $-2.477222\times 10^{0}$ & $-2.477224\times 10^{0}$ & $1.907349\times 10^{-6}$ \\
+19 & $-2.477226\times 10^{0}$ & $-2.477224\times 10^{0}$ & $-2.477225\times 10^{0}$ & $9.536743\times 10^{-7}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{converged}}
+
+\subsection*{Newton}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Newton's method from $x_0=-2$ for the negative root.}
+\label{tab:exp1-neg-newton}
+\begin{tabular}{rrrrr}
+\toprule
+$n$ & $|x_n-x_{n-1}|$ & $|f(x_n)|$ & $x_n$ & Rate \\
+\midrule
+0 & -- & $4.050000\times 10^{0}$ & $-2.000000\times 10^{0}$ & -- \\
+1 & $6.428571\times 10^{-1}$ & $1.948588\times 10^{0}$ & $-2.642857\times 10^{0}$ & -- \\
+2 & $1.534610\times 10^{-1}$ & $1.329043\times 10^{-1}$ & $-2.489396\times 10^{0}$ & -- \\
+3 & $1.209810\times 10^{-2}$ & $7.864386\times 10^{-4}$ & $-2.477298\times 10^{0}$ & 1.773432 \\
+4 & $7.244502\times 10^{-5}$ & $2.809329\times 10^{-8}$ & $-2.477226\times 10^{0}$ & 2.014635 \\
+5 & $2.588077\times 10^{-9}$ & $8.881784\times 10^{-16}$ & $-2.477226\times 10^{0}$ & 2.000726 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{converged}}
+
+\subsection*{Secant}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Secant method from $x_0=-3$, $x_1=-2$ for the negative root.}
+\label{tab:exp1-neg-secant}
+\begin{tabular}{rrrrr}
+\toprule
+$n$ & $|x_n-x_{n-1}|$ & $|f(x_n)|$ & $x_n$ & Rate \\
+\midrule
+0 & -- & $7.260000\times 10^{0}$ & $-3.000000\times 10^{0}$ & -- \\
+1 & $1.000000\times 10^{0}$ & $4.050000\times 10^{0}$ & $-2.000000\times 10^{0}$ & -- \\
+2 & $3.580902\times 10^{-1}$ & $1.218635\times 10^{0}$ & $-2.358090\times 10^{0}$ & -- \\
+3 & $1.541239\times 10^{-1}$ & $3.863850\times 10^{-1}$ & $-2.512214\times 10^{0}$ & 0.820888 \\
+4 & $3.710307\times 10^{-2}$ & $2.292941\times 10^{-2}$ & $-2.475111\times 10^{0}$ & 1.689217 \\
+5 & $2.078480\times 10^{-3}$ & $3.916705\times 10^{-4}$ & $-2.477189\times 10^{0}$ & 2.023840 \\
+6 & $3.612071\times 10^{-5}$ & $4.087090\times 10^{-7}$ & $-2.477226\times 10^{0}$ & 1.406120 \\
+7 & $3.765274\times 10^{-8}$ & $7.274181\times 10^{-12}$ & $-2.477226\times 10^{0}$ & 1.694305 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{converged}}
+
+\subsection*{Hybrid}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Hybrid method on $[-3,-2]$ for the negative root.}
+\label{tab:exp1-neg-hybrid}
+\begin{tabular}{rrrrr}
+\toprule
+$n$ & $a_n$ & $b_n$ & $x_n$ & $\frac{1}{2}(b_n-a_n)$ \\
+\midrule
+0 & $-3.000000\times 10^{0}$ & $-2.000000\times 10^{0}$ & $-3.000000\times 10^{0}$ & $5.000000\times 10^{-1}$ \\
+1 & $-3.000000\times 10^{0}$ & $-2.000000\times 10^{0}$ & $-2.000000\times 10^{0}$ & $5.000000\times 10^{-1}$ \\
+2 & $-2.642857\times 10^{0}$ & $-2.000000\times 10^{0}$ & $-2.642857\times 10^{0}$ & $3.214286\times 10^{-1}$ \\
+3 & $-2.489396\times 10^{0}$ & $-2.000000\times 10^{0}$ & $-2.489396\times 10^{0}$ & $2.446981\times 10^{-1}$ \\
+4 & $-2.477298\times 10^{0}$ & $-2.000000\times 10^{0}$ & $-2.477298\times 10^{0}$ & $2.386490\times 10^{-1}$ \\
+5 & $-2.477226\times 10^{0}$ & $-2.000000\times 10^{0}$ & $-2.477226\times 10^{0}$ & $2.386128\times 10^{-1}$ \\
+6 & $-2.477226\times 10^{0}$ & $-2.000000\times 10^{0}$ & $-2.477226\times 10^{0}$ & $2.386128\times 10^{-1}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{converged}}
+
+\subsection*{Super Halley}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Super Halley method from $x_0=-2$ for the negative root.}
+\label{tab:exp1-neg-halley}
+\begin{tabular}{rrrrr}
+\toprule
+$n$ & $|x_n-x_{n-1}|$ & $|f(x_n)|$ & $x_n$ & Rate \\
+\midrule
+0 & -- & $4.050000\times 10^{0}$ & $-2.000000\times 10^{0}$ & -- \\
+1 & $4.943155\times 10^{-1}$ & $1.870768\times 10^{-1}$ & $-2.494316\times 10^{0}$ & -- \\
+2 & $1.709031\times 10^{-2}$ & $4.075124\times 10^{-6}$ & $-2.477225\times 10^{0}$ & -- \\
+3 & $3.754184\times 10^{-7}$ & $8.881784\times 10^{-16}$ & $-2.477226\times 10^{0}$ & 3.187833 \\
+4 & $0.000000\times 10^{0}$ & $8.881784\times 10^{-16}$ & $-2.477226\times 10^{0}$ & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{converged}}
+
+\subsection*{Double Root at $\alpha=2.5$}
+\subsection*{Newton}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Newton's method from $x_0=2$ for the double root.}
+\label{tab:exp1-double-newton}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & $|x_n-x_{n-1}|$ & $|f(x_n)|$ & $x_n$ & $|x_n-\alpha|$ & Rate \\
+\midrule
+0 & -- & $2.900000\times 10^{-1}$ & $2.000000\times 10^{0}$ & $5.000000\times 10^{-1}$ & -- \\
+1 & $2.543860\times 10^{-1}$ & $7.104999\times 10^{-2}$ & $2.254386\times 10^{0}$ & $2.456140\times 10^{-1}$ & -- \\
+2 & $1.235756\times 10^{-1}$ & $1.764154\times 10^{-2}$ & $2.377962\times 10^{0}$ & $1.220384\times 10^{-1}$ & 0.983933 \\
+3 & $6.117603\times 10^{-2}$ & $4.398467\times 10^{-3}$ & $2.439138\times 10^{0}$ & $6.086238\times 10^{-2}$ & 0.994703 \\
+4 & $3.046622\times 10^{-2}$ & $1.098315\times 10^{-3}$ & $2.469604\times 10^{0}$ & $3.039616\times 10^{-2}$ & 0.997957 \\
+5 & $1.520633\times 10^{-2}$ & $2.744275\times 10^{-4}$ & $2.484810\times 10^{0}$ & $1.518983\times 10^{-2}$ & 0.999123 \\
+6 & $7.596914\times 10^{-3}$ & $6.858867\times 10^{-5}$ & $2.492407\times 10^{0}$ & $7.592916\times 10^{-3}$ & 0.999597 \\
+7 & $3.796950\times 10^{-3}$ & $1.714494\times 10^{-5}$ & $2.496204\times 10^{0}$ & $3.795966\times 10^{-3}$ & 0.999807 \\
+8 & $1.898105\times 10^{-3}$ & $4.285958\times 10^{-6}$ & $2.498102\times 10^{0}$ & $1.897861\times 10^{-3}$ & 0.999906 \\
+9 & $9.489608\times 10^{-4}$ & $1.071455\times 10^{-6}$ & $2.499051\times 10^{0}$ & $9.489000\times 10^{-4}$ & 0.999953 \\
+10 & $4.744576\times 10^{-4}$ & $2.678595\times 10^{-7}$ & $2.499526\times 10^{0}$ & $4.744424\times 10^{-4}$ & 0.999977 \\
+11 & $2.372231\times 10^{-4}$ & $6.696435\times 10^{-8}$ & $2.499763\times 10^{0}$ & $2.372193\times 10^{-4}$ & 0.999988 \\
+12 & $1.186101\times 10^{-4}$ & $1.674102\times 10^{-8}$ & $2.499881\times 10^{0}$ & $1.186092\times 10^{-4}$ & 0.999994 \\
+13 & $5.930471\times 10^{-5}$ & $4.185246\times 10^{-9}$ & $2.499941\times 10^{0}$ & $5.930448\times 10^{-5}$ & 0.999997 \\
+14 & $2.965226\times 10^{-5}$ & $1.046311\times 10^{-9}$ & $2.499970\times 10^{0}$ & $2.965221\times 10^{-5}$ & 0.999998 \\
+15 & $1.482612\times 10^{-5}$ & $2.615774\times 10^{-10}$ & $2.499985\times 10^{0}$ & $1.482609\times 10^{-5}$ & 1.000000 \\
+16 & $7.413051\times 10^{-6}$ & $6.539391\times 10^{-11}$ & $2.499993\times 10^{0}$ & $7.413040\times 10^{-6}$ & 0.999999 \\
+17 & $3.706501\times 10^{-6}$ & $1.634870\times 10^{-11}$ & $2.499996\times 10^{0}$ & $3.706539\times 10^{-6}$ & 0.999992 \\
+18 & $1.853266\times 10^{-6}$ & $4.086509\times 10^{-12}$ & $2.499998\times 10^{0}$ & $1.853273\times 10^{-6}$ & 1.000005 \\
+19 & $9.264803\times 10^{-7}$ & $1.022293\times 10^{-12}$ & $2.499999\times 10^{0}$ & $9.267926\times 10^{-7}$ & 0.999760 \\
+20 & $4.634641\times 10^{-7}$ & $2.557954\times 10^{-13}$ & $2.500000\times 10^{0}$ & $4.633285\times 10^{-7}$ & 1.000454 \\
+21 & $2.319673\times 10^{-7}$ & $6.306067\times 10^{-14}$ & $2.500000\times 10^{0}$ & $2.313612\times 10^{-7}$ & 1.001677 \\
+22 & $1.145226\times 10^{-7}$ & $1.598721\times 10^{-14}$ & $2.500000\times 10^{0}$ & $1.168386\times 10^{-7}$ & 0.983772 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{converged; warning: |f'(x_n)| < TOL}}
+
+\subsection*{Secant}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Secant method from $x_0=2$, $x_1=2.1$ for the double root.}
+\label{tab:exp1-double-secant}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & $|x_n-x_{n-1}|$ & $|f(x_n)|$ & $x_n$ & $|x_n-\alpha|$ & Rate \\
+\midrule
+0 & -- & $2.900000\times 10^{-1}$ & $2.000000\times 10^{0}$ & $5.000000\times 10^{-1}$ & -- \\
+1 & $1.000000\times 10^{-1}$ & $1.868160\times 10^{-1}$ & $2.100000\times 10^{0}$ & $4.000000\times 10^{-1}$ & -- \\
+2 & $1.810513\times 10^{-1}$ & $5.653507\times 10^{-2}$ & $2.281051\times 10^{0}$ & $2.189487\times 10^{-1}$ & 2.700626 \\
+3 & $7.856676\times 10^{-2}$ & $2.332523\times 10^{-2}$ & $2.359618\times 10^{0}$ & $1.403819\times 10^{-1}$ & 0.737555 \\
+4 & $5.518207\times 10^{-2}$ & $8.611379\times 10^{-3}$ & $2.414800\times 10^{0}$ & $8.519984\times 10^{-2}$ & 1.123510 \\
+5 & $3.229567\times 10^{-2}$ & $3.324397\times 10^{-3}$ & $2.447096\times 10^{0}$ & $5.290417\times 10^{-2}$ & 0.954243 \\
+6 & $2.030717\times 10^{-2}$ & $1.263021\times 10^{-3}$ & $2.467403\times 10^{0}$ & $3.259701\times 10^{-2}$ & 1.016252 \\
+7 & $1.244236\times 10^{-2}$ & $4.830553\times 10^{-4}$ & $2.479845\times 10^{0}$ & $2.015464\times 10^{-2}$ & 0.992822 \\
+8 & $7.705911\times 10^{-3}$ & $1.843372\times 10^{-4}$ & $2.487551\times 10^{0}$ & $1.244873\times 10^{-2}$ & 1.002143 \\
+9 & $4.755274\times 10^{-3}$ & $7.041687\times 10^{-5}$ & $2.492307\times 10^{0}$ & $7.693456\times 10^{-3}$ & 0.998822 \\
+10 & $2.939348\times 10^{-3}$ & $2.689152\times 10^{-5}$ & $2.495246\times 10^{0}$ & $4.754108\times 10^{-3}$ & 1.000234 \\
+11 & $1.816034\times 10^{-3}$ & $1.027139\times 10^{-5}$ & $2.497062\times 10^{0}$ & $2.938074\times 10^{-3}$ & 0.999780 \\
+12 & $1.122326\times 10^{-3}$ & $3.923118\times 10^{-6}$ & $2.498184\times 10^{0}$ & $1.815748\times 10^{-3}$ & 1.000004 \\
+13 & $6.935771\times 10^{-4}$ & $1.498471\times 10^{-6}$ & $2.498878\times 10^{0}$ & $1.122171\times 10^{-3}$ & 0.999949 \\
+14 & $4.286418\times 10^{-4}$ & $5.723555\times 10^{-7}$ & $2.499306\times 10^{0}$ & $6.935288\times 10^{-4}$ & 0.999989 \\
+15 & $2.649081\times 10^{-4}$ & $2.186186\times 10^{-7}$ & $2.499571\times 10^{0}$ & $4.286207\times 10^{-4}$ & 0.999986 \\
+16 & $1.637200\times 10^{-4}$ & $8.350438\times 10^{-8}$ & $2.499735\times 10^{0}$ & $2.649007\times 10^{-4}$ & 0.999994 \\
+17 & $1.011836\times 10^{-4}$ & $3.189573\times 10^{-8}$ & $2.499836\times 10^{0}$ & $1.637171\times 10^{-4}$ & 0.999995 \\
+18 & $6.253457\times 10^{-5}$ & $1.218306\times 10^{-8}$ & $2.499899\times 10^{0}$ & $1.011825\times 10^{-4}$ & 0.999997 \\
+19 & $3.864836\times 10^{-5}$ & $4.653507\times 10^{-9}$ & $2.499937\times 10^{0}$ & $6.253414\times 10^{-5}$ & 0.999998 \\
+20 & $2.388594\times 10^{-5}$ & $1.777480\times 10^{-9}$ & $2.499961\times 10^{0}$ & $3.864820\times 10^{-5}$ & 0.999998 \\
+21 & $1.476231\times 10^{-5}$ & $6.789378\times 10^{-10}$ & $2.499976\times 10^{0}$ & $2.388590\times 10^{-5}$ & 0.999999 \\
+22 & $9.123623\times 10^{-6}$ & $2.593294\times 10^{-10}$ & $2.499985\times 10^{0}$ & $1.476227\times 10^{-5}$ & 1.000003 \\
+23 & $5.638649\times 10^{-6}$ & $9.905499\times 10^{-11}$ & $2.499991\times 10^{0}$ & $9.123625\times 10^{-6}$ & 0.999988 \\
+24 & $3.484874\times 10^{-6}$ & $3.783640\times 10^{-11}$ & $2.499994\times 10^{0}$ & $5.638751\times 10^{-6}$ & 0.999994 \\
+25 & $2.153841\times 10^{-6}$ & $1.445155\times 10^{-11}$ & $2.499997\times 10^{0}$ & $3.484910\times 10^{-6}$ & 1.000033 \\
+26 & $1.331047\times 10^{-6}$ & $5.520029\times 10^{-12}$ & $2.499998\times 10^{0}$ & $2.153863\times 10^{-6}$ & 0.999915 \\
+27 & $8.226391\times 10^{-7}$ & $2.108536\times 10^{-12}$ & $2.499999\times 10^{0}$ & $1.331224\times 10^{-6}$ & 0.999969 \\
+28 & $5.084471\times 10^{-7}$ & $8.055778\times 10^{-13}$ & $2.499999\times 10^{0}$ & $8.227767\times 10^{-7}$ & 1.000010 \\
+29 & $3.143568\times 10^{-7}$ & $3.073097\times 10^{-13}$ & $2.499999\times 10^{0}$ & $5.084199\times 10^{-7}$ & 1.000433 \\
+30 & $1.938814\times 10^{-7}$ & $1.181277\times 10^{-13}$ & $2.500000\times 10^{0}$ & $3.145385\times 10^{-7}$ & 0.997557 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{converged}}
+
+\subsection*{Super Halley}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Super Halley method from $x_0=2$ for the double root.}
+\label{tab:exp1-double-halley}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & $|x_n-x_{n-1}|$ & $|f(x_n)|$ & $x_n$ & $|x_n-\alpha|$ & Rate \\
+\midrule
+0 & -- & $2.900000\times 10^{-1}$ & $2.000000\times 10^{0}$ & $5.000000\times 10^{-1}$ & -- \\
+1 & $3.706392\times 10^{-1}$ & $1.981592\times 10^{-2}$ & $2.370639\times 10^{0}$ & $1.293608\times 10^{-1}$ & -- \\
+2 & $9.689447\times 10^{-2}$ & $1.252919\times 10^{-3}$ & $2.467534\times 10^{0}$ & $3.246630\times 10^{-2}$ & 1.022485 \\
+3 & $2.434442\times 10^{-2}$ & $7.847669\times 10^{-5}$ & $2.491878\times 10^{0}$ & $8.121881\times 10^{-3}$ & 1.002343 \\
+4 & $6.091120\times 10^{-3}$ & $4.907213\times 10^{-6}$ & $2.497969\times 10^{0}$ & $2.030761\times 10^{-3}$ & 1.000368 \\
+5 & $1.523053\times 10^{-3}$ & $3.067378\times 10^{-7}$ & $2.499492\times 10^{0}$ & $5.077078\times 10^{-4}$ & 1.000078 \\
+6 & $3.807798\times 10^{-4}$ & $1.917168\times 10^{-8}$ & $2.499873\times 10^{0}$ & $1.269280\times 10^{-4}$ & 1.000019 \\
+7 & $9.519595\times 10^{-5}$ & $1.198241\times 10^{-9}$ & $2.499968\times 10^{0}$ & $3.173209\times 10^{-5}$ & 1.000004 \\
+8 & $2.379908\times 10^{-5}$ & $7.488943\times 10^{-11}$ & $2.499992\times 10^{0}$ & $7.933012\times 10^{-6}$ & 1.000003 \\
+9 & $5.949700\times 10^{-6}$ & $4.680700\times 10^{-12}$ & $2.499998\times 10^{0}$ & $1.983313\times 10^{-6}$ & 0.999977 \\
+10 & $1.487379\times 10^{-6}$ & $2.922107\times 10^{-13}$ & $2.500000\times 10^{0}$ & $4.959336\times 10^{-7}$ & 0.999868 \\
+11 & $3.709560\times 10^{-7}$ & $1.776357\times 10^{-14}$ & $2.500000\times 10^{0}$ & $1.249776\times 10^{-7}$ & 0.994391 \\
+12 & $8.704657\times 10^{-8}$ & $1.776357\times 10^{-15}$ & $2.500000\times 10^{0}$ & $3.793102\times 10^{-8}$ & 0.865094 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{converged; warning: |f'(x_n)| < TOL}}
+
+\section{Experiment 2}
+\subsection*{Chord}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Chord method for $f(x)=2-e^x$ with $x_0=0$ and $M=20$.}
+\label{tab:exp2-chord}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & $|x_n-x_{n-1}|$ & $|f(x_n)|$ & $x_n$ & $|x_n-\alpha|$ & Rate \\
+\midrule
+0 & -- & $1.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & -- \\
+1 & $1.000000\times 10^{0}$ & $7.182818\times 10^{-1}$ & $1.000000\times 10^{0}$ & $3.068528\times 10^{-1}$ & -- \\
+2 & $7.182818\times 10^{-1}$ & $6.745949\times 10^{-1}$ & $2.817182\times 10^{-1}$ & $4.114290\times 10^{-1}$ & -0.359894 \\
+3 & $6.745949\times 10^{-1}$ & $6.020850\times 10^{-1}$ & $9.563130\times 10^{-1}$ & $2.631659\times 10^{-1}$ & -1.523697 \\
+4 & $6.020850\times 10^{-1}$ & $5.749199\times 10^{-1}$ & $3.542281\times 10^{-1}$ & $3.389191\times 10^{-1}$ & -0.566132 \\
+5 & $5.749199\times 10^{-1}$ & $5.323505\times 10^{-1}$ & $9.291479\times 10^{-1}$ & $2.360007\times 10^{-1}$ & -1.430670 \\
+6 & $5.323505\times 10^{-1}$ & $5.129453\times 10^{-1}$ & $3.967974\times 10^{-1}$ & $2.963497\times 10^{-1}$ & -0.629148 \\
+7 & $5.129453\times 10^{-1}$ & $4.836835\times 10^{-1}$ & $9.097428\times 10^{-1}$ & $2.165956\times 10^{-1}$ & -1.376816 \\
+8 & $4.836835\times 10^{-1}$ & $4.687886\times 10^{-1}$ & $4.260592\times 10^{-1}$ & $2.670880\times 10^{-1}$ & -0.668391 \\
+9 & $4.687886\times 10^{-1}$ & $4.469633\times 10^{-1}$ & $8.948478\times 10^{-1}$ & $2.017006\times 10^{-1}$ & -1.340009 \\
+10 & $4.469633\times 10^{-1}$ & $4.350021\times 10^{-1}$ & $4.478845\times 10^{-1}$ & $2.452627\times 10^{-1}$ & -0.696402 \\
+11 & $4.350021\times 10^{-1}$ & $4.178690\times 10^{-1}$ & $8.828866\times 10^{-1}$ & $1.897394\times 10^{-1}$ & -1.312628 \\
+12 & $4.178690\times 10^{-1}$ & $4.079578\times 10^{-1}$ & $4.650176\times 10^{-1}$ & $2.281296\times 10^{-1}$ & -0.717873 \\
+13 & $4.079578\times 10^{-1}$ & $3.940234\times 10^{-1}$ & $8.729754\times 10^{-1}$ & $1.798282\times 10^{-1}$ & -1.291158 \\
+14 & $3.940234\times 10^{-1}$ & $3.856184\times 10^{-1}$ & $4.789520\times 10^{-1}$ & $2.141952\times 10^{-1}$ & -0.735087 \\
+15 & $3.856184\times 10^{-1}$ & $3.739860\times 10^{-1}$ & $8.645704\times 10^{-1}$ & $1.714232\times 10^{-1}$ & -1.273703 \\
+16 & $3.739860\times 10^{-1}$ & $3.667295\times 10^{-1}$ & $4.905844\times 10^{-1}$ & $2.025628\times 10^{-1}$ & -0.749327 \\
+17 & $3.667295\times 10^{-1}$ & $3.568217\times 10^{-1}$ & $8.573140\times 10^{-1}$ & $1.641668\times 10^{-1}$ & -1.259130 \\
+18 & $3.568217\times 10^{-1}$ & $3.504669\times 10^{-1}$ & $5.004923\times 10^{-1}$ & $1.926549\times 10^{-1}$ & -0.761383 \\
+19 & $3.504669\times 10^{-1}$ & $3.418921\times 10^{-1}$ & $8.509592\times 10^{-1}$ & $1.578120\times 10^{-1}$ & -1.246713 \\
+20 & $3.418921\times 10^{-1}$ & $3.362616\times 10^{-1}$ & $5.090671\times 10^{-1}$ & $1.840801\times 10^{-1}$ & -0.771776 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{fixed-iteration run complete}}
+
+\subsection*{Secant}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Secant method for $f(x)=2-e^x$ with $x_0=0$, $x_1=2$, and $M=20$.}
+\label{tab:exp2-secant}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & $|x_n-x_{n-1}|$ & $|f(x_n)|$ & $x_n$ & $|x_n-\alpha|$ & Rate \\
+\midrule
+0 & -- & $1.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & -- \\
+1 & $2.000000\times 10^{0}$ & $5.389056\times 10^{0}$ & $2.000000\times 10^{0}$ & $1.306853\times 10^{0}$ & -- \\
+2 & $1.686965\times 10^{0}$ & $6.324302\times 10^{-1}$ & $3.130353\times 10^{-1}$ & $3.801119\times 10^{-1}$ & -1.947396 \\
+3 & $1.771801\times 10^{-1}$ & $3.673322\times 10^{-1}$ & $4.902154\times 10^{-1}$ & $2.029318\times 10^{-1}$ & 0.508211 \\
+4 & $2.455090\times 10^{-1}$ & $8.699318\times 10^{-2}$ & $7.357244\times 10^{-1}$ & $4.257718\times 10^{-2}$ & 2.488149 \\
+5 & $4.700950\times 10^{-2}$ & $8.845021\times 10^{-3}$ & $6.887149\times 10^{-1}$ & $4.432319\times 10^{-3}$ & 1.448813 \\
+6 & $4.338562\times 10^{-3}$ & $1.875042\times 10^{-4}$ & $6.930534\times 10^{-1}$ & $9.375649\times 10^{-5}$ & 1.704378 \\
+7 & $9.396442\times 10^{-5}$ & $4.158722\times 10^{-7}$ & $6.931474\times 10^{-1}$ & $2.079361\times 10^{-7}$ & 1.584871 \\
+8 & $2.079458\times 10^{-7}$ & $1.949574\times 10^{-11}$ & $6.931472\times 10^{-1}$ & $9.747869\times 10^{-12}$ & 1.631086 \\
+9 & $9.747869\times 10^{-12}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+10 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{error: secant denominator underflow}}
+
+\subsection*{Newton}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Newton's method for $f(x)=2-e^x$ with $x_0=0$ and $M=20$.}
+\label{tab:exp2-newton}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & $|x_n-x_{n-1}|$ & $|f(x_n)|$ & $x_n$ & $|x_n-\alpha|$ & Rate \\
+\midrule
+0 & -- & $1.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & -- \\
+1 & $1.000000\times 10^{0}$ & $7.182818\times 10^{-1}$ & $1.000000\times 10^{0}$ & $3.068528\times 10^{-1}$ & -- \\
+2 & $2.642411\times 10^{-1}$ & $8.706523\times 10^{-2}$ & $7.357589\times 10^{-1}$ & $4.261170\times 10^{-2}$ & 2.422754 \\
+3 & $4.171658\times 10^{-2}$ & $1.791040\times 10^{-3}$ & $6.940423\times 10^{-1}$ & $8.951194\times 10^{-4}$ & 1.956666 \\
+4 & $8.947189\times 10^{-4}$ & $8.009998\times 10^{-7}$ & $6.931476\times 10^{-1}$ & $4.004998\times 10^{-7}$ & 1.996413 \\
+5 & $4.004997\times 10^{-7}$ & $1.603162\times 10^{-13}$ & $6.931472\times 10^{-1}$ & $8.015810\times 10^{-14}$ & 2.000029 \\
+6 & $8.015810\times 10^{-14}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+7 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+8 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+9 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+10 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+11 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+12 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+13 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+14 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+15 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+16 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+17 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+18 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+19 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+20 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $0.000000\times 10^{0}$ & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{fixed-iteration run complete}}
+
+\subsection*{Super Halley}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Super Halley method for $f(x)=2-e^x$ with $x_0=0$ and $M=20$.}
+\label{tab:exp2-halley}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & $|x_n-x_{n-1}|$ & $|f(x_n)|$ & $x_n$ & $|x_n-\alpha|$ & Rate \\
+\midrule
+0 & -- & $1.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & -- \\
+1 & $7.500000\times 10^{-1}$ & $1.170000\times 10^{-1}$ & $7.500000\times 10^{-1}$ & $5.685282\times 10^{-2}$ & -- \\
+2 & $5.688345\times 10^{-2}$ & $6.126301\times 10^{-5}$ & $6.931165\times 10^{-1}$ & $3.063197\times 10^{-5}$ & 3.009536 \\
+3 & $3.063197\times 10^{-5}$ & $9.325873\times 10^{-15}$ & $6.931472\times 10^{-1}$ & $4.773959\times 10^{-15}$ & -- \\
+4 & $4.662937\times 10^{-15}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+5 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+6 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+7 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+8 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+9 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+10 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+11 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+12 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+13 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+14 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+15 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+16 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+17 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+18 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+19 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+20 & $0.000000\times 10^{0}$ & $0.000000\times 10^{0}$ & $6.931472\times 10^{-1}$ & $1.110223\times 10^{-16}$ & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{fixed-iteration run complete}}
+
+\section{Experiment 3}
+\subsection*{Newton from $x_0=1$}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Newton's method for $f(x)=10xe^{-x^2}$ with $x_0=1$, $TOL=10^{-4}$, and $M=30$.}
+\label{tab:exp3-newton-pos}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & $|x_n-x_{n-1}|$ & $|f(x_n)|$ & $x_n$ & $|x_n-\alpha|$ & Rate \\
+\midrule
+0 & -- & $3.678794\times 10^{0}$ & $1.000000\times 10^{0}$ & $1.000000\times 10^{0}$ & -- \\
+1 & $1.000000\times 10^{0}$ & $3.663128\times 10^{-1}$ & $2.000000\times 10^{0}$ & $2.000000\times 10^{0}$ & -- \\
+2 & $2.857143\times 10^{-1}$ & $1.230424\times 10^{-1}$ & $2.285714\times 10^{0}$ & $2.285714\times 10^{0}$ & 0.192645 \\
+3 & $2.419006\times 10^{-1}$ & $4.246921\times 10^{-2}$ & $2.527615\times 10^{0}$ & $2.527615\times 10^{0}$ & 0.753363 \\
+4 & $2.146107\times 10^{-1}$ & $1.486945\times 10^{-2}$ & $2.742226\times 10^{0}$ & $2.742226\times 10^{0}$ & 0.810096 \\
+5 & $1.953207\times 10^{-1}$ & $5.252669\times 10^{-3}$ & $2.937546\times 10^{0}$ & $2.937546\times 10^{0}$ & 0.844296 \\
+6 & $1.806792\times 10^{-1}$ & $1.866890\times 10^{-3}$ & $3.118226\times 10^{0}$ & $3.118226\times 10^{0}$ & 0.867518 \\
+7 & $1.690401\times 10^{-1}$ & $6.664975\times 10^{-4}$ & $3.287266\times 10^{0}$ & $3.287266\times 10^{0}$ & 0.884445 \\
+8 & $1.594813\times 10^{-1}$ & $2.387607\times 10^{-4}$ & $3.446747\times 10^{0}$ & $3.446747\times 10^{0}$ & 0.897385 \\
+9 & $1.514379\times 10^{-1}$ & $8.576326\times 10^{-5}$ & $3.598185\times 10^{0}$ & $3.598185\times 10^{0}$ & 0.907628 \\
+10 & $1.445410\times 10^{-1}$ & $3.087395\times 10^{-5}$ & $3.742726\times 10^{0}$ & $3.742726\times 10^{0}$ & 0.915951 \\
+11 & $1.385374\times 10^{-1}$ & $1.113453\times 10^{-5}$ & $3.881263\times 10^{0}$ & $3.881263\times 10^{0}$ & 0.922859 \\
+12 & $1.332467\times 10^{-1}$ & $4.021764\times 10^{-6}$ & $4.014510\times 10^{0}$ & $4.014510\times 10^{0}$ & 0.928689 \\
+13 & $1.285360\times 10^{-1}$ & $1.454551\times 10^{-6}$ & $4.143046\times 10^{0}$ & $4.143046\times 10^{0}$ & 0.933679 \\
+14 & $1.243051\times 10^{-1}$ & $5.266623\times 10^{-7}$ & $4.267351\times 10^{0}$ & $4.267351\times 10^{0}$ & 0.938001 \\
+15 & $1.204766\times 10^{-1}$ & $1.908817\times 10^{-7}$ & $4.387828\times 10^{0}$ & $4.387828\times 10^{0}$ & 0.941783 \\
+16 & $1.169898\times 10^{-1}$ & $6.924271\times 10^{-8}$ & $4.504817\times 10^{0}$ & $4.504817\times 10^{0}$ & 0.945121 \\
+17 & $1.137961\times 10^{-1}$ & $2.513734\times 10^{-8}$ & $4.618614\times 10^{0}$ & $4.618614\times 10^{0}$ & 0.948090 \\
+18 & $1.108560\times 10^{-1}$ & $9.131975\times 10^{-9}$ & $4.729470\times 10^{0}$ & $4.729470\times 10^{0}$ & 0.950748 \\
+19 & $1.081373\times 10^{-1}$ & $3.319555\times 10^{-9}$ & $4.837607\times 10^{0}$ & $4.837607\times 10^{0}$ & 0.953143 \\
+20 & $1.056133\times 10^{-1}$ & $1.207367\times 10^{-9}$ & $4.943220\times 10^{0}$ & $4.943220\times 10^{0}$ & 0.955312 \\
+21 & $1.032616\times 10^{-1}$ & $4.393599\times 10^{-10}$ & $5.046482\times 10^{0}$ & $5.046482\times 10^{0}$ & 0.957286 \\
+22 & $1.010631\times 10^{-1}$ & $1.599573\times 10^{-10}$ & $5.147545\times 10^{0}$ & $5.147545\times 10^{0}$ & 0.959090 \\
+23 & $9.900184\times 10^{-2}$ & $5.826043\times 10^{-11}$ & $5.246547\times 10^{0}$ & $5.246547\times 10^{0}$ & 0.960746 \\
+24 & $9.706389\times 10^{-2}$ & $2.122825\times 10^{-11}$ & $5.343611\times 10^{0}$ & $5.343611\times 10^{0}$ & 0.962271 \\
+25 & $9.523735\times 10^{-2}$ & $7.737709\times 10^{-12}$ & $5.438848\times 10^{0}$ & $5.438848\times 10^{0}$ & 0.963681 \\
+26 & $9.351183\times 10^{-2}$ & $2.821349\times 10^{-12}$ & $5.532360\times 10^{0}$ & $5.532360\times 10^{0}$ & 0.964988 \\
+27 & $9.187828\times 10^{-2}$ & $1.029051\times 10^{-12}$ & $5.624238\times 10^{0}$ & $5.624238\times 10^{0}$ & 0.966203 \\
+28 & $9.032873\times 10^{-2}$ & $3.754425\times 10^{-13}$ & $5.714567\times 10^{0}$ & $5.714567\times 10^{0}$ & 0.967335 \\
+29 & $8.885617\times 10^{-2}$ & $1.370150\times 10^{-13}$ & $5.803423\times 10^{0}$ & $5.803423\times 10^{0}$ & 0.968393 \\
+30 & $8.745437\times 10^{-2}$ & $5.001534\times 10^{-14}$ & $5.890877\times 10^{0}$ & $5.890877\times 10^{0}$ & 0.969384 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{fixed-iteration run complete; warning: |f'(x_n)| < TOL}}
+
+\subsection*{Newton from $x_0=-0.705$}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Newton's method for $f(x)=10xe^{-x^2}$ with $x_0=-0.705$, $TOL=10^{-4}$, and $M=30$.}
+\label{tab:exp3-newton-near}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & $|x_n-x_{n-1}|$ & $|f(x_n)|$ & $x_n$ & $|x_n-\alpha|$ & Rate \\
+\midrule
+0 & -- & $4.288781\times 10^{0}$ & $-7.050000\times 10^{-1}$ & $7.050000\times 10^{-1}$ & -- \\
+1 & $1.184874\times 10^{2}$ & $0.000000\times 10^{0}$ & $1.177824\times 10^{2}$ & $1.177824\times 10^{2}$ & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{error: derivative underflow in Newton step; warning: |f'(x_n)| < TOL}}
+
+\subsection*{Hybrid on $[-0.705,1]$}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Hybrid method for $f(x)=10xe^{-x^2}$ on $[-0.705,1]$.}
+\label{tab:exp3-hybrid-1}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & $a_n$ & $b_n$ & $x_n$ & $\frac{1}{2}(b_n-a_n)$ & $|x_n-\alpha|$ \\
+\midrule
+0 & $-7.050000\times 10^{-1}$ & $1.000000\times 10^{0}$ & $-7.050000\times 10^{-1}$ & $8.525000\times 10^{-1}$ & $7.050000\times 10^{-1}$ \\
+1 & $-7.050000\times 10^{-1}$ & $1.000000\times 10^{0}$ & $1.000000\times 10^{0}$ & $8.525000\times 10^{-1}$ & $1.000000\times 10^{0}$ \\
+2 & $-7.050000\times 10^{-1}$ & $1.475000\times 10^{-1}$ & $1.475000\times 10^{-1}$ & $4.262500\times 10^{-1}$ & $1.475000\times 10^{-1}$ \\
+3 & $-6.710065\times 10^{-3}$ & $1.475000\times 10^{-1}$ & $-6.710065\times 10^{-3}$ & $7.710503\times 10^{-2}$ & $6.710065\times 10^{-3}$ \\
+4 & $-6.710065\times 10^{-3}$ & $6.042955\times 10^{-7}$ & $6.042955\times 10^{-7}$ & $3.355335\times 10^{-3}$ & $6.042955\times 10^{-7}$ \\
+5 & $-4.413042\times 10^{-19}$ & $6.042955\times 10^{-7}$ & $-4.413042\times 10^{-19}$ & $3.021478\times 10^{-7}$ & $4.413042\times 10^{-19}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{converged}}
+
+\subsection*{Hybrid on $[-0.71,2.71]$}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Hybrid method for $f(x)=10xe^{-x^2}$ on $[-0.71,2.71]$.}
+\label{tab:exp3-hybrid-2}
+\begin{tabular}{rrrrrr}
+\toprule
+$n$ & $a_n$ & $b_n$ & $x_n$ & $\frac{1}{2}(b_n-a_n)$ & $|x_n-\alpha|$ \\
+\midrule
+0 & $-7.100000\times 10^{-1}$ & $2.710000\times 10^{0}$ & $-7.100000\times 10^{-1}$ & $1.710000\times 10^{0}$ & $7.100000\times 10^{-1}$ \\
+1 & $-7.100000\times 10^{-1}$ & $2.710000\times 10^{0}$ & $2.710000\times 10^{0}$ & $1.710000\times 10^{0}$ & $2.710000\times 10^{0}$ \\
+2 & $-7.100000\times 10^{-1}$ & $1.000000\times 10^{0}$ & $1.000000\times 10^{0}$ & $8.550000\times 10^{-1}$ & $1.000000\times 10^{0}$ \\
+3 & $-7.100000\times 10^{-1}$ & $1.450000\times 10^{-1}$ & $1.450000\times 10^{-1}$ & $4.275000\times 10^{-1}$ & $1.450000\times 10^{-1}$ \\
+4 & $-6.364894\times 10^{-3}$ & $1.450000\times 10^{-1}$ & $-6.364894\times 10^{-3}$ & $7.568245\times 10^{-2}$ & $6.364894\times 10^{-3}$ \\
+5 & $-6.364894\times 10^{-3}$ & $5.157493\times 10^{-7}$ & $5.157493\times 10^{-7}$ & $3.182705\times 10^{-3}$ & $5.157493\times 10^{-7}$ \\
+6 & $-2.743328\times 10^{-19}$ & $5.157493\times 10^{-7}$ & $-2.743328\times 10^{-19}$ & $2.578747\times 10^{-7}$ & $2.743328\times 10^{-19}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{converged}}
+
+\section{Graduate Section}
+\subsection*{Naive Bisection Scan}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Naive bisection on the degree-9 polynomial for slightly perturbed intervals near $[1.92,2.08]$.}
+\label{tab:grad-scan}
+\begin{tabular}{rrrrr}
+\toprule
+$a$ & $b$ & $x_N$ & $N$ & $|p(x_N)|$ \\
+\midrule
+$1.920000\times 10^{0}$ & $2.080000\times 10^{0}$ & $2.000000\times 10^{0}$ & 0 & $0.000000\times 10^{0}$ \\
+$1.920002\times 10^{0}$ & $2.079999\times 10^{0}$ & $2.036987\times 10^{0}$ & 1000 & $1.477929\times 10^{-12}$ \\
+$1.920004\times 10^{0}$ & $2.079998\times 10^{0}$ & $2.042266\times 10^{0}$ & 21 & $0.000000\times 10^{0}$ \\
+$1.920006\times 10^{0}$ & $2.079997\times 10^{0}$ & $2.005095\times 10^{0}$ & 36 & $0.000000\times 10^{0}$ \\
+$1.920008\times 10^{0}$ & $2.079996\times 10^{0}$ & $2.049063\times 10^{0}$ & 1000 & $2.785328\times 10^{-12}$ \\
+$1.920010\times 10^{0}$ & $2.079995\times 10^{0}$ & $1.955606\times 10^{0}$ & 1000 & $2.160050\times 10^{-12}$ \\
+$1.920012\times 10^{0}$ & $2.079994\times 10^{0}$ & $1.980005\times 10^{0}$ & 2 & $0.000000\times 10^{0}$ \\
+$1.920014\times 10^{0}$ & $2.079993\times 10^{0}$ & $1.957796\times 10^{0}$ & 45 & $0.000000\times 10^{0}$ \\
+$1.920016\times 10^{0}$ & $2.079992\times 10^{0}$ & $1.982398\times 10^{0}$ & 1000 & $2.501110\times 10^{-12}$ \\
+$1.920018\times 10^{0}$ & $2.079991\times 10^{0}$ & $1.981570\times 10^{0}$ & 8 & $0.000000\times 10^{0}$ \\
+$1.920020\times 10^{0}$ & $2.079990\times 10^{0}$ & $2.052694\times 10^{0}$ & 1000 & $4.774847\times 10^{-12}$ \\
+$1.920022\times 10^{0}$ & $2.079989\times 10^{0}$ & $1.976573\times 10^{0}$ & 8 & $0.000000\times 10^{0}$ \\
+$1.920024\times 10^{0}$ & $2.079988\times 10^{0}$ & $2.012517\times 10^{0}$ & 1000 & $1.818989\times 10^{-12}$ \\
+$1.920026\times 10^{0}$ & $2.079987\times 10^{0}$ & $1.955169\times 10^{0}$ & 1000 & $3.865352\times 10^{-12}$ \\
+$1.920028\times 10^{0}$ & $2.079986\times 10^{0}$ & $2.034935\times 10^{0}$ & 46 & $0.000000\times 10^{0}$ \\
+$1.920030\times 10^{0}$ & $2.079985\times 10^{0}$ & $2.016222\times 10^{0}$ & 1000 & $5.684342\times 10^{-13}$ \\
+$1.920032\times 10^{0}$ & $2.079984\times 10^{0}$ & $1.950781\times 10^{0}$ & 42 & $0.000000\times 10^{0}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Safeguarded Bisection}
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.12}
+\caption{Safeguarded bisection with Horner error bounds on $[1.0,2.5]$.}
+\label{tab:grad-safe}
+\begin{tabular}{rrrrrrrr}
+\toprule
+$n$ & $a_n$ & $b_n$ & $x_n$ & $\frac{1}{2}(b_n-a_n)$ & $|\widetilde{p}(x_n)|$ & $d_n$ & sign \\
+\midrule
+0 & $1.000000\times 10^{0}$ & $2.500000\times 10^{0}$ & $1.750000\times 10^{0}$ & $7.500000\times 10^{-1}$ & $3.814697\times 10^{-6}$ & $5.861303\times 10^{-10}$ & negative \\
+1 & $1.750000\times 10^{0}$ & $2.500000\times 10^{0}$ & $2.125000\times 10^{0}$ & $3.750000\times 10^{-1}$ & $7.450581\times 10^{-9}$ & $1.382064\times 10^{-9}$ & positive \\
+2 & $1.750000\times 10^{0}$ & $2.125000\times 10^{0}$ & $1.937500\times 10^{0}$ & $1.875000\times 10^{-1}$ & $1.455192\times 10^{-11}$ & $9.092804\times 10^{-10}$ & uncertain \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent\textbf{Status:} \texttt{\detokenize{stopped: sign of p(x_n) is unreliable from roundoff}}

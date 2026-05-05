@@ -1,0 +1,86 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\title{MAT627 Chapter 3 Programming Assignment}
+\author{Emre Tekmen}
+\begin{document}
+\maketitle
+
+\noindent
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{figures/exp1_function.png}
+    \caption{Experiment 1 polynomial on $[-3,9]$. The negative root and the double root are marked from the computed iterates.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.74\textwidth]{figures/exp1_multiple_root.png}
+    \caption{Experiment 1: convergence histories for Newton, secant, and Super Halley near the double root $\alpha=2.5$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.73\textwidth]{figures/exp2_function.png}
+    \caption{Experiment 2 function $f(x)=2-e^x$ on $[-1,2]$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.74\textwidth]{figures/exp2_rates.png}
+    \caption{Experiment 2: error decay for the chord, secant, Newton, and Super Halley methods.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.73\textwidth]{figures/exp3_function.png}
+    \caption{Experiment 3 function $f(x)=10xe^{-x^2}$ on $[-2,2]$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.74\textwidth]{figures/exp3_locality.png}
+    \caption{Experiment 3: Newton's sensitivity near a point where $f'(x)\approx 0$ versus the safeguarded hybrid iterations.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/grad_instability.png}
+    \caption{Graduate section: interval sensitivity of naive bisection for $(x-2)^9$ and the Horner error-bound stopping test.}
+\end{figure}
+
+\clearpage
+\input{figures/tables.tex}
+
+\section{Discussion}
+\subsection*{Experiment 1}
+For the negative root, every method converged rapidly, but the bracketing methods 
+also guaranteed that the root stayed trapped inside the interval. For the double root at
+$\alpha=2.5$, the open methods slowed down substantially. This is due to multiplicity, and is observed in the rate column.
+
+\subsection*{Experiment 2}
+The error plot separates the methods by effective order. Newton and Super Halley collapse
+to machine precision in very few steps, the secant method is slightly above linear,
+and the chord method performs the worst because it freezes the derivative at $x_0=0$. In this
+test, that fixed slope is not a good linear model near the root, so the method gets stuck.
+
+
+\subsection*{Experiment 3}
+This test shows the difference between a purely local method and a safeguarded one. Newton's
+method is undreliable because the start at $x_0=-0.705$ sits near a point where
+$f'(x)=10(1-2x^2)e^{-x^2}$ is almost zero, so the first Newton correction explodes, while the
+start at $x_0=1$ drifts to large positive values where $f(x)$ is numerically tiny even though the
+iterate is far from the true root $\alpha=0$. The hybrid method avoids that by
+falling back to the bracketing interval whenever the Newton step is not trustworthy, so both
+intervals still converge to the intended root.
+
+\subsection*{Graduate Section}
+For $p(x)=(x-2)^9$, naive bisection is extremely sensitive because the polynomial is very flat near
+the root and Horner evaluation causes catastrophic cancellation. 
+Small changes in the input interval therefore produce noticeably different computed roots.
+To demonstrate the modified stopping criterion after several bisections, I used the asymmetric
+interval $[1.0,2.5]$ for the safeguarded run. The code stops when the Horner error bouind exceeds the magnitude of the computed value, $|\tilde p(x_n)| \leq d_n,$ since at that point the true polynomial value could be of either sign and bisection's sign test is unreliable.
+\end{document}
+

@@ -1,0 +1,1 @@
+stopped: sign of p(x_n) is unreliable from roundoff

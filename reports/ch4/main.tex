@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\title{MAT627 Chapter 4 Programming Assignment}
+\author{Emre Tekmen}
+\begin{document}
+\maketitle
+
+\noindent
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{figures/exp1_convergence.png}
+    \caption{Experiment 1: maximum interpolation error for $\sin(x)$ on $[-3,3]$ across the five methods.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{figures/exp2_approximation.png}
+    \caption{Experiment 2: approximations for $f(x)=\sqrt[3]{x^2}$ on $[-1,1]$ with $N=6$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{figures/exp2_error.png}
+    \caption{Experiment 2: error functions for $N=12$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{figures/exp3_b1_approximation.png}
+    \caption{Experiment 3 with $b=1$: approximations for $N=6$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{figures/exp3_b1_error.png}
+    \caption{Experiment 3 with $b=1$: error functions for $N=12$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{figures/exp3_b4_approximation.png}
+    \caption{Experiment 3 with $b=4$: approximations for $N=6$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{figures/exp3_b4_error.png}
+    \caption{Experiment 3 with $b=4$: error functions for $N=12$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{figures/grad_approximation.png}
+    \caption{Graduate section: collocation spline approximation versus the exact solution for $N=5$.}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{figures/grad_error.png}
+    \caption{Graduate section: error function $u_h-u$ for $N=20$.}
+\end{figure}
+
+\clearpage
+\input{figures/tables.tex}
+
+\section{Discussion}
+\subsection*{Experiment 1}
+For the smooth sine function, the local methods are the most reliable. The piecewise quadratic
+interpolant and the cubic spline converge cleanly, with the spline showing  fourth-order
+convergence. The Hermite and global Lagrange formulas become extremely accurate at moderate $N$,
+but by the largest values they also show the finite-precision instability expected from high-degree
+global divided-difference polynomials. Among the global Lagrange methods, the Chebyshev nodes
+are more stable than the equally spaced nodes.
+
+\subsection*{Experiment 2}
+The cusp at $x=0$ causes problems for all methods. The global Lagrange interpolant with equally spaced
+nodes becomes rapidly unstable as $N$ grows, while the piecewise cubic and spline approximations
+continue to improve with a much more modest rate. That slower decay is still consistent with the
+limited smoothness of $f(x)=\sqrt[3]{x^2}$: the local methods are stable, but the singular
+derivative prevents the high-order convergence seen in the smooth experiments.
+
+\subsection*{Experiment 3}
+When $b=1$, every method is reasonablyaccurate, but the Chebyshev-node interpolant already 
+has the smallest global oscillation. When $b=4$, the equally spaced global Lagrange interpolant
+develops the large endpoint oscillations as described by the Runge phenomenon, while the Chebyshev,
+piecewise cubic, and spline approximations stay substantially more stable. 
+
+\subsection*{Graduate Section}
+The collocation spline produces a smooth approximation on the full interval and the error table
+shows second-order decay. Because the approximation is represented
+directly as a cubic spline, the boundary value problem is solved over the whole interval rather
+than only at the mesh points, so the plotted error is smooth instead of like with a finite difference method.
+
+\end{document}

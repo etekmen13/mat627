@@ -6,6 +6,12 @@ mod ch2_4;
 mod ch2_5;
 mod ch2_6;
 mod ch2_7;
+#[macro_use]
+mod peano;
+#[macro_use]
+mod diff;
+mod ch3;
+mod ch4;
 mod util;
 use std::env;
 use std::{fs, io};
@@ -15,7 +21,7 @@ fn main() {
     // println!("{:.4e} {:.4e} {:.4e}", a, b, c);
     if args.len() < 2 {
         eprintln!(
-            "Please provide the chapter/section number (e.g. '1', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6')"
+            "Please provide the chapter/section number (e.g. '1', '2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '3', '4')"
         );
         return;
     }
@@ -52,6 +58,14 @@ fn main() {
         "2.7" => {
             make_dirs("ch2_7").expect("Error making directories.");
             ch2_7();
+        }
+        "3" => {
+            make_dirs("ch3").expect("Error making directories.");
+            ch3();
+        }
+        "4" => {
+            make_dirs("ch4").expect("Error making directories.");
+            ch4();
         }
 
         _ => println!("Chapter/section unrecognized."),
@@ -157,4 +171,16 @@ fn ch2_7() {
     println!("\n=== Chapter 2.7 Programming Project ===");
     ch2_7::generate().expect("Error generating chapter 2.7 outputs");
     println!("View report in reports/ch2_7/2.7.pdf");
+}
+
+fn ch3() {
+    println!("\n=== Chapter 3 Programming Project ===");
+    ch3::generate().expect("Error generating chapter 3 outputs");
+    println!("View report in reports/ch3/3.pdf");
+}
+
+fn ch4() {
+    println!("\n=== Chapter 4 Programming Project ===");
+    ch4::generate().expect("Error generating chapter 4 outputs");
+    println!("View report in reports/ch4/4.pdf");
 }
